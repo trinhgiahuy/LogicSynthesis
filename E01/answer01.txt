@@ -1,0 +1,18 @@
+1) In lock.vhd, state machine need to be updated for the state code_2. Else part is not handled properly.
+
+2) WHEN code_2 =>
+            IF (to_integer(UNSIGNED(keys_in)) = third_c) THEN
+               next_state <= code_3;
+            ELSE
+               next_state <= code_3;
+            END IF;
+
+This state always success irrespective of the input key.
+
+
+3)
+
+Force commands are manually typed for every input and simulate. Where as in testbench,
+inputs are generated automatically based on the conditions, also it is readable.
+
+There are 4 states in the state machine
