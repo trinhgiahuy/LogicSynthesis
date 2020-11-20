@@ -1,0 +1,14 @@
+What difficulties could be expected in a generic multiple number adder if the count of numbers is not a power of two or if the count is not pre-defined?
+- We are using the adders with 2 input ports which a require a power of 2 adders so that 
+every output can be directed to a new layer of adders.
+- If the count is not pre-defined, it is difficult to instantiate the number of adders
+to fulfill this calculation.
+
+What is the difference between VHDL's architecture levels structural and RTL?
+-Structural is a structure of a sequential component 'adder' which operates as a 
+combinational component. The structural does not use clock and register directly 
+but through its sub-components
+
+How is hierarchical design implemented with VHDL?
+- In VHDL we seperate the bigger task into smaller task which can be seen as simple entity.
+And then instantiate them as sub-components/
