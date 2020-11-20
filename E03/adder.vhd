@@ -40,7 +40,7 @@ architecture rtl of adder is
     sync : process(rst_n, clk)
     begin
       if (rst_n = '0') then
-        result <= (othersco => '0');
+        result <= (others => '0');
       elsif (clk = '1' and clk'event) then
         --- resize the input , convert them into signed & calculate sum_out
         result <= resize(signed(a_in), operand_width_g + 1) + resize(signed(b_in), operand_width_g + 1);
