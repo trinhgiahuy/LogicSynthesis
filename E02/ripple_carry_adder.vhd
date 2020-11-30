@@ -3,10 +3,10 @@
 -- Project    : 
 -------------------------------------------------------------------------------
 -- File       : ripple_carry_adder.vhd
--- Author     : group 09
+-- Author     : Group 09 : Trinh Huy, Rajesh Singapati 
 -- Company    : 
 -- Created    : 2020-11-07
--- Last update: 2020-11-07
+-- Last update: 2020-11-30
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -74,7 +74,7 @@ begin  -- gate
 
   F <= a_in(2) xor b_in(2);
   s_out(2) <= F xor Carry_fa;
-  G <= F xor Carry_fa;
+  G <= F and  Carry_fa;
   H <= a_in(2) and b_in(2);
   s_out(3) <= G or H;
       
