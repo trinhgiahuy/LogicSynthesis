@@ -1,12 +1,12 @@
 -------------------------------------------------------------------------------
--- Title      : <title string>
+-- Title      : EX05: Testbench of multi_port_adder
 -- Project    : 
 -------------------------------------------------------------------------------
 -- File       : tb_multi_port_adder.vhd
 -- Author     :   <ACER@LAPTOP-PGKK1HS3>
 -- Company    : 
 -- Created    : 2020-11-29
--- Last update: 2020-11-29
+-- Last update: 2020-12-01
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -25,11 +25,11 @@ use ieee.numeric_std.all;
 use std.textio.all;
 
 entity tb_multi_port_adder is
-  generic(operand_width_g : integer := 4);
+  generic(operand_width_g : integer := 3);
 end entity tb_multi_port_adder;
 
 architecture test_bench of tb_multi_port_adder is
-  constant period_c         : time    := 10ns;
+  constant period_c         : time    := 10 ns;
   constant num_of_operands_c : integer := 4;
   constant duv_delay_c      : integer := 2;
 
@@ -42,8 +42,8 @@ architecture test_bench of tb_multi_port_adder is
   signal output_valid_r : std_logic_vector(duv_delay_c downto 0);
   
 
-  file input_f      : text open read_mode is "input.txt";
-  file ref_results_f : text open read_mode is "ref_result.txt";
+  file input_f      : text open read_mode  is "input.txt";
+  file ref_results_f : text open read_mode is "ref_results.txt";
   file output_f     : text open write_mode is "output.txt";
 
 
@@ -59,7 +59,7 @@ architecture test_bench of tb_multi_port_adder is
 
 begin
   clk   <= not clk after period_c/2;
-  rst_n <= '1'     after period_c/4;
+  rst_n <= '1'     after period_c*4;
 
   i_adder : component multi_port_adder
     generic map (
@@ -129,7 +129,7 @@ begin
       end if;
     end if;
   end process;
-end architecture;
+end architecture test_bench;
 
 
 

@@ -6,7 +6,7 @@
 -- Author     : Trinh Gia Huy, Rajesh Singapati
 -- Company    : 
 -- Created    : 2020-11-20
--- Last update: 2020-11-29
+-- Last update: 2020-12-01
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -41,10 +41,10 @@ architecture structural of multi_port_adder is
     port(
       clk, rst_n : in  std_logic;
       a_in, b_in : in  std_logic_vector(operand_width_g - 1 downto 0);
-      sum_out    : out std_logic_vector (operand_width_g downto 0));
+      sum_out    : out std_logic_vector (operand_width_g  downto 0));
   end component;
 
-  type arr1 is array (0 to num_of_operands_g/2-1) of std_logic_vector(operand_width_g downto 0);
+  type arr1 is array (num_of_operands_g/2-1 downto 0) of std_logic_vector(operand_width_g downto 0);
   signal subtotal : arr1;
   signal total    : std_logic_vector(operand_width_g+1 downto 0);
 
@@ -56,9 +56,10 @@ architecture structural of multi_port_adder is
   
                                      
 
-  signal sumout : std_logic_vector(operand_width_g-1 downto 0);
+  --signal sumout : std_logic_vector(operand_width_g-1 downto 0);
 
 begin
+  assert (num_of_operands_g = 4) report "The num_of_operands_g should only be 4" severity failure;
   add_1 : adder generic map (
     operand_width_g => operand_width_g)
 
@@ -77,17 +78,18 @@ begin
       clk     => clk,
       rst_n   => rst_n,
       a_in    => operands_in(operand_width_g*(num_of_operands_g-2) -1 downto operand_width_g*(num_of_operands_g-3)),
-      b_in    => operands_in(operand_width_g*(num_of_operands_g-3) downto 0),
+      b_in    => operands_in(operand_width_g*(num_of_operands_g-3) -1  downto 0),
       sum_out => subtotal(1));
 
   add_3 : adder generic map (
-    operand_width_g => operand_width_g)
+    operand_width_g => operand_width_g+1)
     port map (
       clk     => clk,
       rst_n   => rst_n,
-      a_in    => subtotal(0)(operand_width_g downto 0),
-      b_in    => subtotal(1)(operand_width_g downto 0),
+      a_in    => subtotal(0)(operand_width_g  downto 0),
+      b_in    => subtotal(1)(operand_width_g  downto 0),
       sum_out => total);
 
   sum_out <= total(operand_width_g - 1 downto 0);
+  
 end structural;
