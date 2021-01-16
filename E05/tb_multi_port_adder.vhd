@@ -6,7 +6,7 @@
 -- Author     :   <ACER@LAPTOP-PGKK1HS3>
 -- Company    : 
 -- Created    : 2020-11-29
--- Last update: 2020-12-01
+-- Last update: 2021-01-10
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -100,7 +100,7 @@ begin
   end process;
 
   --Process for checking the output of adder matches to reference value.
-  checker : process (clk)
+  checker : process (clk, rst_n)
     variable line_in_v       : line;
     variable line_out_v      : line;    --variable for line of  output 
     variable ref_output_v    : integer;
