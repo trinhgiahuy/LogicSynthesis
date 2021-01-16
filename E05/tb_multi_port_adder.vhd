@@ -3,20 +3,20 @@
 -- Project    : 
 -------------------------------------------------------------------------------
 -- File       : tb_multi_port_adder.vhd
--- Author     :   <ACER@LAPTOP-PGKK1HS3>
+-- Author     :   Trinh Huy
 -- Company    : 
 -- Created    : 2020-11-29
--- Last update: 2021-01-10
+-- Last update: 2021-01-16
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
--- Description: <cursor>
+-- Description: A test bench for multi-port adder design
 -------------------------------------------------------------------------------
 -- Copyright (c) 2020 
 -------------------------------------------------------------------------------
 -- Revisions  :
--- Date        Version  Author  Description
--- 2020-11-29  1.0      ACER    Created
+-- Date        Version  Author          Description
+-- 2020-11-29  1.0      Trinh Huy       Created
 -------------------------------------------------------------------------------
 
 library ieee;
