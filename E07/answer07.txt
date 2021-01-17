@@ -1,0 +1,40 @@
+Draft of architecture
+
+
+architecture RTL of audio_ctrl is
+	
+	-- max lrclk freq is calculate by half of clock period generated frequency
+	-- We divide by sample_rate to get the step value
+	constant lrclk_counter_steps_c : integer := ref_clk_freq_g / sample_rate_g / 2;
+	
+	
+	-- Require number of steps to bclk counter
+	constant min_bclk_period_c : integer := 75		-- ns according to table 23 in data sheet
+	constant one_second_in_nano_second_c : integer := 1000000000;
+	constant bclk_counter_steps_c : integer := min_bclk_period_c/(one_second_in_nano_second_c/ref_clk_freq_g)/2 + 1;
+	
+	signal left_sample_r , right_sample_r : std_logic_vector(data_width_g -1 downto 0);
+	signal bit_index_r 					  : integer range -1 to data_width_g -1;
+	
+	--Counter signal for generated clock stored in register
+	signal bclk_counter_r : integer range 0 to bclk_counter_steps_c - 1;
+	signal lrclk_counter_r : integer range 0 to lrclk_counter_steps_c -1;
+	
+	--Output signal
+	signal bclk_r , lrclk_r , data_out_r : std_logic;
+	
+
+
+Process descripton:
+
+When a counter reach its max value, it will invert the output signal, make it oscillate between 0 & 1 with prefered frequency
+Which mean at the rising clk edge, value of lrclk_r is checked and increase unless it equal to max value and invert if reset.
+If lrclk_r equal to 0 , the sample will read from data input to register.
+
+Similarly, on the rising clk edge, value bclk_r is checked and unless it is equal to -1, bit_index_r decrease. Next bit is also transmitted from sample.
+
+State of lrclk_r is checked to choose the correct channel to transmit.
+
+
+
+	
