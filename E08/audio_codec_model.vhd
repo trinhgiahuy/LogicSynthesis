@@ -6,7 +6,7 @@
 -- Author     : Trinh Gia Huy
 -- Company    : 
 -- Created    : 2021-01-24
--- Last update: 2021-01-25
+-- Last update: 2021-01-31
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -27,9 +27,9 @@ use ieee.numeric_std.all;
 entity audio_codec_model is
   generic (data_width_g : integer := 16);
   port(
-    rst_n : in std_logic;
-    aud_data_in, aud_bclk_in, aud_lrclk_in : in std_logic;
-    value_left_out, value_right_out : out std_logic_vector(data_width_g - 1 downto 0)
+    rst_n                                  : in  std_logic;
+    aud_data_in, aud_bclk_in, aud_lrclk_in : in  std_logic;
+    value_left_out, value_right_out        : out std_logic_vector(data_width_g - 1 downto 0)
     );
 end entity audio_codec_model;
 
@@ -45,7 +45,7 @@ architecture RTL of audio_codec_model is
   --Bit index to read. Value -1 indicate the words is fully read
   signal bit_index_r : integer range -1 to curr_word_r'high -1;
 
-  
+
   signal value_left_out_r, value_right_out_r : std_logic_vector(data_width_g -1 downto 0);
 
 begin
@@ -65,7 +65,7 @@ begin
       curr_word_r <= aud_data_in & (curr_word_r'HIGH -1 downto curr_word_r'LOW => '0');
 
       bit_index_r <= curr_word_r'high -1;
-    end procedure ;
+    end procedure;
 
 
     --Procedure is used to read each bit of word. This should be called on each
@@ -79,23 +79,23 @@ begin
         --Set bit index -1 thus next branch will not execute until next state transition
         bit_index_r <= -1;
 
-      elsif (bit_index_r /= -1 )then
-        
+      elsif (bit_index_r /= -1)then
+
         --Take the next bit and decrease the index
 
         curr_word_r(bit_index_r) <= aud_data_in;
-        bit_index_r <= bit_index_r -1;
+        bit_index_r              <= bit_index_r -1;
 
       end if;
-    end procedure ;
+    end procedure;
 
   begin
 
     if (rst_n = '0') then
-      curr_state_r <= wait_for_input;
-      curr_word_r <= (others => '0');
-      bit_index_r <= -1;
-      value_left_out_r <= (others => '0');
+      curr_state_r      <= wait_for_input;
+      curr_word_r       <= (others => '0');
+      bit_index_r       <= -1;
+      value_left_out_r  <= (others => '0');
       value_right_out_r <= (others => '0');
 
     elsif (aud_bclk_in'event and aud_bclk_in = '1') then
@@ -128,25 +128,25 @@ begin
   end process;
 
   value_right_out <= value_right_out_r;
-  value_left_out <= value_left_out_r;
+  value_left_out  <= value_left_out_r;
 
 end architecture RTL;
 
 
-                     
-        
-            
-          
-            
-            
-
-           
-            
-        
-     
-    
-                     
-    
 
 
-  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
