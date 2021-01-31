@@ -60,7 +60,7 @@ architecture testbench of tb_audio_ctrl is
       );
   end component;
 
-  component aud_ctrl
+  component audio_ctrl
     generic (
       ref_clk_freq_g : integer;
       sample_rate_g  : integer;
@@ -71,7 +71,7 @@ architecture testbench of tb_audio_ctrl is
       left_data_in, right_data_in               : in  std_logic_vector(data_width_g -1 downto 0);
       aud_bclk_out, aud_lrclk_out, aud_data_out : out std_logic
       );
-  end component;
+  end component audio_ctrl;
 
   component audio_codec_model
     generic (
@@ -118,7 +118,7 @@ begin
       value_out       => right_wave_gen_data
       );
 
-  i_audio_ctrl : component aud_ctrl
+  i_audio_ctrl : component audio_ctrl
     generic map (
       ref_clk_freq_g => ref_clk_freq_c,
       sample_rate_g  => sample_rate_c,
