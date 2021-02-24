@@ -3,10 +3,10 @@
 -- Project    : 
 -------------------------------------------------------------------------------
 -- File       : tb_multi_port_adder.vhd
--- Author     :   Trinh Huy
+-- Author     :   Trinh Huy, Rajesh Singapati
 -- Company    : 
 -- Created    : 2020-11-29
--- Last update: 2021-01-16
+-- Last update: 2021-02-25
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -15,8 +15,8 @@
 -- Copyright (c) 2020 
 -------------------------------------------------------------------------------
 -- Revisions  :
--- Date        Version  Author          Description
--- 2020-11-29  1.0      Trinh Huy       Created
+-- Date        Version  Author                          Description
+-- 2020-11-29  1.0      Trinh Huy,Rajesh Singapati       Created
 -------------------------------------------------------------------------------
 
 library ieee;
