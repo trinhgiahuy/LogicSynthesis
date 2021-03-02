@@ -3,10 +3,10 @@
 -- Project    : 
 -------------------------------------------------------------------------------
 -- File       : audio_ctrl.vhd
--- Author     : Trinh Gia Huy
+-- Author     : Trinh Gia Huy, Rajesh Singapati
 -- Company    : 
 -- Created    : 2021-01-17
--- Last update: 2021-01-31
+-- Last update: 2021-03-02
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -15,8 +15,8 @@
 -- Copyright (c) 2021 
 -------------------------------------------------------------------------------
 -- Revisions  :
--- Date        Version  Author                  Description
--- 2021-01-17  1.0      Trinh Gia Huy           Created
+-- Date        Version  Author                                  Description
+-- 2021-01-17  1.0      Trinh Gia Huy, Rajesh Singapati           Created
 -------------------------------------------------------------------------------
 
 library ieee;
