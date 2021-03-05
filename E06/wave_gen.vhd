@@ -3,10 +3,10 @@
 -- Project    : 
 -------------------------------------------------------------------------------
 -- File       : wave_gen.vhd
--- Author     :   Trinh Gia Huy
+-- Author     : Trinh Gia Huy, Rajesh Singapati
 -- Company    : 
 -- Created    : 2020-12-05
--- Last update: 2021-01-16
+-- Last update: 2021-03-02
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------

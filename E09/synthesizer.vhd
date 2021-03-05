@@ -3,10 +3,10 @@
 -- Project    : 
 -------------------------------------------------------------------------------
 -- File       : synthesizer.vhd
--- Author     :   <ACER@LAPTOP-PGKK1HS3>
+-- Author     : Trinh Gia Huy, Rajesh Singapati
 -- Company    : 
 -- Created    : 2021-01-30
--- Last update: 2021-02-01
+-- Last update: 2021-03-02
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------

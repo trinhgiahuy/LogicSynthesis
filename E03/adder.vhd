@@ -3,10 +3,10 @@
 -- Project    : 
 -------------------------------------------------------------------------------
 -- File       : adder.vhd
--- Author     : group 9
+-- Author     : Trinh Gia Huy, Rajesh Singapati
 -- Company    : 
 -- Created    : 2020-11-11
--- Last update: 2021-01-31
+-- Last update: 2021-03-02
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -34,16 +34,16 @@ end adder;
 ---------------------------------------------------------------------------------
 architecture rtl of adder is
   signal result_r : signed(operand_width_g downto 0) := (others => '0');
-  begin
+begin
   --register for the output
   sum_out <= std_logic_vector(result_r);
-    sync : process(rst_n, clk)
-    begin
-      if (rst_n = '0') then
-        result_r <= (others => '0');
-      elsif (clk = '1' and clk'event) then
-        --- resize the input , convert them into signed & calculate sum_out
-        result_r <= resize(signed(a_in), operand_width_g + 1) + resize(signed(b_in), operand_width_g + 1);
-      end if;
-    end process sync;
-  end architecture rtl;
+  sync : process(rst_n, clk)
+  begin
+    if (rst_n = '0') then
+      result_r <= (others => '0');
+    elsif (clk = '1' and clk'event) then
+      --- resize the input , convert them into signed & calculate sum_out
+      result_r <= resize(signed(a_in), operand_width_g + 1) + resize(signed(b_in), operand_width_g + 1);
+    end if;
+  end process sync;
+end architecture rtl;
