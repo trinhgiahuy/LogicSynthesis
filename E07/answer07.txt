@@ -35,6 +35,15 @@ Similarly, on the rising clk edge, value bclk_r is checked and unless it is equa
 
 State of lrclk_r is checked to choose the correct channel to transmit.
 
+-----ADDITION PART
+*The bit and word clock will be derived based on ref_clk_freq_g and sample_rate_g value as for example.
+We choose the bit freq on sampling period (sampling rate 48KHz) to transmit the sample (both left and right) Which is 32 bit in total. 
+Since the whole data word contains 32 bits then bitclk should be 32 times the word clock which is 48 Khz*32 = 1.536 MHz then bit_counter equal 12.266/1.536 = 8 
+This bit clock signal will invert every 8 complete cycles of reference clk signal.
+The bitclk_counter = ref_clk_freq_g / (sample_rate_g*32)
+The word_clk_counter = ref_clk_freq_g / sample_rate_g = 12.288/0.048 = 256
+The word clock signal will invert every 256 complete cycles of reference clk signal.
+
 
 
 	
