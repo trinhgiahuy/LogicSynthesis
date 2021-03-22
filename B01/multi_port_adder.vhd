@@ -25,8 +25,9 @@ use IEEE.math_real.all;
 use ieee.numeric_std.all;
 
 entity multi_port_adder is
-  generic (operand_width_g   : integer := 16;
-           exponent_of_operands_g : integer := 3);
+  generic (operand_width_g        : integer := 16;
+           exponent_of_operands_g : integer := 2;
+           num_of_operands_g      : integer := 4);
   port (
     clk         : in  std_logic;
     rst_n       : in  std_logic;
@@ -54,7 +55,7 @@ architecture structural of multi_port_adder is
   signal incrementer : integer := 0;
 
   type sum_adder_array is array (num_of_operands_c downto 0) of std_logic_vector(operand_width_g downto 0);
-  
+
   signal sum_array : sum_adder_array;
   --signal total    : std_logic_vector(operand_width_g+1 downto 0);
 
@@ -65,7 +66,7 @@ architecture structural of multi_port_adder is
   --signal b_2      : std_logic_vector(operand_width_g-1 downto 0);
   --signal sumout : std_logic_vector(operand_width_g-1 downto 0);
 
-  
+
 begin
   --assert (num_of_operands_g = 4) report "The num_of_operands_g should only be 4" severity failure;
 
@@ -76,28 +77,28 @@ begin
         input_array(i) <= (others => '0');
       end loop clear_input;
 
-      clear_sum :for i in 0 to num_of_operands_c loop
+      clear_sum : for i in 0 to num_of_operands_c loop
         sum_array(i) <= (others => '0');
       end loop clear_sum;
 
-  elsif (clk'event and clk = '1') then
-    extract_input : for i in 0 to num_of_operands_c-1 loop
-      input_array(i)<=operands_in(((i+1)*operand_width_g)-1 downto i*operand_width_g);
-    end loop extract_input;
-  end if;
+    elsif (clk'event and clk = '1') then
+    --extract_input : for i in 0 to num_of_operands_c-1 loop
+    -- input_array(i)<=operands_in(((i+1)*operand_width_g)-1 downto i*operand_width_g);
+    --end loop extract_input;
+    end if;
   end process assign_input;
-  
+
   g_adder : for index in 0 to num_of_operands_c -1 generate
     adder_1 : adder generic map (
       operand_width_g => operand_width_g)
-    port map (
-      clk   => clk,
-      rst_n => rst_n,
-      a_in  => sum_array(index)(operand_width_g -1 downto 0),
-      b_in  => operands_in(((index+1)*operand_width_g)-1 downto index*operand_width_g),
-      sum_out => sum_array(index+1));
+      port map (
+        clk     => clk,
+        rst_n   => rst_n,
+        a_in    => sum_array(index)(operand_width_g -1 downto 0),
+        b_in    => operands_in(((index+1)*operand_width_g)-1 downto index*operand_width_g),
+        sum_out => sum_array(index+1));
   end generate g_adder;
-  
+
   sum_out <= sum_array(num_of_operands_c);
 
 end structural;
