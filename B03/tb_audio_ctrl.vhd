@@ -3,7 +3,7 @@
 -- Project    : 
 -------------------------------------------------------------------------------
 -- File       : tb_audio_ctrl.vhd
--- Author     : Trinh Gia Huy
+-- Author     : Trinh Gia Huy, Rajesh Singapati
 -- Company    : 
 -- Created    : 2021-01-24
 -- Last update: 2021-03-24
@@ -24,24 +24,24 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
 entity tb_audio_ctrl is
-  generic (data_width_g : integer := 16;
+  generic (data_width_g   : integer := 16;
            ref_clk_freq_g : integer := 20000000;
-           sample_rate_g : integer := 48000
+           sample_rate_g  : integer := 48000
            );
 end entity;
 
 architecture testbench of tb_audio_ctrl is
 
-  constant period_c                : time    := 50 ns;
+  constant period_c : time := 50 ns;
   --constant wave_gen_syn_clear_time : time    := 4 ms;
   --constant ref_clk_freq_c          : integer := 1 sec/ period_c;
   --constant sample_rate_c           : integer := 48000;
 
-  signal clk                   : std_logic := '0';
-  signal rst_n                 : std_logic := '0';
+  signal clk        : std_logic := '0';
+  signal rst_n      : std_logic := '0';
   --signal wave_gen_sync_clear_n : std_logic := '1';
   signal sync_clear : std_logic;
-    
+
   signal left_wave_gen_data  : std_logic_vector (data_width_g -1 downto 0);
   signal right_wave_gen_data : std_logic_vector (data_width_g -1 downto 0);
 
@@ -52,15 +52,15 @@ architecture testbench of tb_audio_ctrl is
   signal left_audio_codec_data  : std_logic_vector(data_width_g -1 downto 0);
   signal right_audio_codec_data : std_logic_vector(data_width_g -1 downto 0);
 
-  constant clear_delay_c : integer := 20000;
+  constant clear_delay_c    : integer := 20000;
   constant clear_duration_c : integer := 20000;
-  constant width_c : integer := 16;
+  constant width_c          : integer := 16;
   --constant step_left_c : integer := 2;
   --constant step_right_c : integer := 10;
 
-  signal left_error,right_error : std_logic;
+  signal left_error, right_error : std_logic;
 
-  
+
 
   --instanitate the given component for testbench
   component wave_gen
@@ -102,13 +102,13 @@ architecture testbench of tb_audio_ctrl is
 begin
 
   --Initialization of clock and reset signal
-  clk                   <= not clk after period_c/2;
-  rst_n                 <= '1'     after period_c*4;
+  clk        <= not clk after period_c/2;
+  rst_n      <= '1'     after period_c*4;
   --wave_gen_sync_clear_n <= '0'     after wave_gen_syn_clear_time, '1' after wave_gen_syn_clear_time + period_c;
   sync_clear <= '1',
                 '0' after period_c*clear_delay_c,
                 '1' after period_c*(clear_delay_c+clear_duration_c);
-  
+
   --Component instantiation
   i_wave_gen_left : component wave_gen
     generic map (
@@ -166,26 +166,26 @@ begin
 
   checker_process : process (clk, rst_n)
   begin
-    if ( rst_n = '0') then
+    if (rst_n = '0') then
       right_error <= '0';
-      left_error <= '0';
-    elsif ( clk'event and clk='1') then
-           --In case of any difference in left data
-           if (left_wave_gen_data > left_audio_codec_data) or ( left_wave_gen_data < left_audio_codec_data) then
-             left_error <= '1';       --Raise left flag data
-           end if;  
-         --Case of any difference in right data
-         if ( right_wave_gen_data > right_audio_codec_data) or ( right_wave_gen_data < right_audio_codec_data) then
-           right_error <= '1'; --Raise right flag data
-         end if;
+      left_error  <= '0';
+    elsif (clk'event and clk = '1') then
+      --In case of any difference in left data
+      if (left_wave_gen_data > left_audio_codec_data) or (left_wave_gen_data < left_audio_codec_data) then
+        left_error <= '1';              --Raise left flag data
+      end if;
+      --Case of any difference in right data
+      if (right_wave_gen_data > right_audio_codec_data) or (right_wave_gen_data < right_audio_codec_data) then
+        right_error <= '1';             --Raise right flag data
+      end if;
     end if;
   end process checker_process;
 
   --CHecking right data error
   assert right_error = '0' report "Right data error ! The data fed in different from the output value" severity error;
-   --CHecking left  data error
+  --CHecking left  data error
   assert left_error = '0' report "Left data error ! The data fed in different from the output value" severity error;
-             
-                                      
+
+
 end architecture testbench;
 
