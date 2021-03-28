@@ -6,7 +6,7 @@
 -- Author     : Trinh Gia Huy, Rajesh Singapati
 -- Company    : 
 -- Created    : 2020-11-20
--- Last update: 2021-03-23
+-- Last update: 2021-03-28
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -52,8 +52,6 @@ architecture structural of multi_port_adder is
   type adder_array is array (num_of_operands_c - 1 downto 0) of std_logic_vector(operand_width_g-1 downto 0);
   signal input_array : adder_array;
 
-  signal incrementer : integer := 0;
-
   type sum_adder_array is array (num_of_operands_c downto 0) of std_logic_vector(operand_width_g downto 0);
 
   signal sum_array : sum_adder_array;
@@ -82,9 +80,9 @@ begin
       end loop clear_sum;
 
     elsif (clk'event and clk = '1') then
-    --extract_input : for i in 0 to num_of_operands_c-1 loop
-    -- input_array(i)<=operands_in(((i+1)*operand_width_g)-1 downto i*operand_width_g);
-    --end loop extract_input;
+      extract_input : for i in 0 to num_of_operands_c-1 loop
+      input_array(i)<=operands_in(((i+1)*operand_width_g)-1 downto i*operand_width_g);
+      end loop extract_input;
     end if;
   end process assign_input;
 
@@ -95,7 +93,7 @@ begin
         clk     => clk,
         rst_n   => rst_n,
         a_in    => sum_array(index)(operand_width_g -1 downto 0),
-        b_in    => operands_in(((index+1)*operand_width_g)-1 downto index*operand_width_g),
+        b_in    => input_array(index),
         sum_out => sum_array(index+1));
   end generate g_adder;
 
