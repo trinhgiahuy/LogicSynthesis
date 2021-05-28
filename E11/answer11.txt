@@ -1,0 +1,22 @@
+Configuration value DAI_CTRL
+Address: 0x29 (0010 1001)	found from page 62
+Value: 1000 0001			from page 76.
+
+There are 7 states in the FSM :
+
+type state_tpye is (start_cond, 				--start condition
+					wait_ack					--wait acknowledgement
+					slave_addr_trans, 			--slave address transmit
+					reg_add_trans,				--register address transmit
+					data_trans					--data transmit
+					stop_cond,					--stop condition
+					finished					--finished
+					);
+
+
+We will have a register signal for storing parameter index and current bit index.
+The machine state start from start_cond to finished and repeats 15 times.
+In each time slave_address, register_address and data will be transmited sequentially.
+
+ACK or NACK will be read after each byte and if NACK is receive, it will turn back to start_cond
+Finally, after finishing all transmission, the finished output will be set 1.

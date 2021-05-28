@@ -1,0 +1,23 @@
+Utilization of the board
+	
+LUT : 0.44%
+FF : 0.22%
+IO : 12.08%
+PLL : 25%
+
+i2c bus controller : 0.13% / 0.06% / 0.2%
+all wave generators : 0.23%/ 0.06% / 0.29%
+multiport adder : 0.03% / 0.04%/ 0.11%
+audio ctrl : 0.04% / 0.04% / 0.05%
+
+Requirement of clock period and current frequency
+clk_out1 : 20.000ns / 125.000MHz
+
+clk_out2 : 81.379ns / 12.288 MHz
+
+WNS : 15.653ns
+
+Minimum clock period of clk_out1 : 	20.000 - 15.653 = 4.347ns => Max frequency of clk_out1 : 230 MHz
+Minimum clock period of clk_out2 : 81.379 - 15.653 = 65.726ns => Max frequency of clk_out2 : 15 Mhz
+
+Yes I can run successfully with synthesis. The frequency sound when pressing button 0 is lowest and increases upto Button 3 with highest frequency.
