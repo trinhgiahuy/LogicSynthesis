@@ -6,7 +6,7 @@
 -- Author     :   Trinh Huy, Rajesh Singapati
 -- Company    : 
 -- Created    : 2020-11-29
--- Last update: 2021-02-25
+-- Last update: 2021-03-08
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -36,11 +36,10 @@ architecture test_bench of tb_multi_port_adder is
   signal clk       : std_logic := '0';
   signal rst_n     : std_logic := '0';
   -- Input operand as single concatented vector.
-  signal operands_r : std_logic_vector(operand_width_g*num_of_operands_c -1 downto 0);
+  signal operands_r : std_logic_vector((operand_width_g*num_of_operands_c) -1 downto 0);
   signal sum       : std_logic_vector(operand_width_g -1 downto 0);
   --Counter for addressing adder delay
   signal output_valid_r : std_logic_vector(duv_delay_c downto 0);
-  
 
   file input_f      : text open read_mode  is "input.txt";
   file ref_results_f : text open read_mode is "ref_results.txt";
@@ -75,7 +74,7 @@ begin
 
   -- process for readin input file and directing it to adder input.
   input_reader : process (clk, rst_n)
-    type value_array_t is array (3 downto 0) of integer;
+    type value_array_t is array (num_of_operands_c-1 downto 0) of integer;
     variable line_v        : line;
     variable input_value_v : value_array_t;
 

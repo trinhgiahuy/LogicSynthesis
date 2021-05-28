@@ -6,7 +6,7 @@
 -- Author     : Trinh Gia Huy, Rajesh Singapati
 -- Company    : 
 -- Created    : 2020-11-11
--- Last update: 2021-03-02
+-- Last update: 2021-03-08
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -33,7 +33,7 @@ end adder;
 
 ---------------------------------------------------------------------------------
 architecture rtl of adder is
-  signal result_r : signed(operand_width_g downto 0) := (others => '0');
+  signal result_r : signed(operand_width_g downto 0);
 begin
   --register for the output
   sum_out <= std_logic_vector(result_r);
