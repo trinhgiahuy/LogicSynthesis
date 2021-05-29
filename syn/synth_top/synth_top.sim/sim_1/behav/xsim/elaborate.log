@@ -1,0 +1,19 @@
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2020.2/bin/unwrapped/win64.o/xelab.exe -wto dcb4a5d4618845e5a3062d572146c7ff --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot multi_port_adder_behav xil_defaultlib.multi_port_adder xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling module xil_defaultlib.glbl
+Compiling architecture rtl of entity xil_defaultlib.adder [\adder(operand_width_g=16)\]
+Compiling architecture rtl of entity xil_defaultlib.adder [\adder(operand_width_g=17)\]
+Compiling architecture structural of entity xil_defaultlib.multi_port_adder
+Built simulation snapshot multi_port_adder_behav

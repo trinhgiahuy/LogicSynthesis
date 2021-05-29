@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="D:/logsyn/syn/synth_top/synth_top.hw/hw_1/wave/hw_ila_data_1/hw_ila_data_1.wdb" id="1">
+         <top_modules>
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="10fs"></ZoomEndTime>
+      <Cursor1Time time="3fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="459"></NameColumnWidth>
+      <ValueColumnWidth column_width="174"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="9" />
+   <wave_markers>
+   </wave_markers>
+   <wvobject fp_name="system_top_level_i/i2c_config_0/param_status_out" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">system_top_level_i/i2c_config_0/param_status_out[3:0]</obj_property>
+      <obj_property name="ObjectShortName">param_status_out[3:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="system_top_level_i/i2c_config_0/U0/sclk_counter_r_reg" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">system_top_level_i/i2c_config_0/U0/sclk_counter_r_reg[11:0]</obj_property>
+      <obj_property name="ObjectShortName">sclk_counter_r_reg[11:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="pin_i2c_sclk_OBUF" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">pin_i2c_sclk_OBUF</obj_property>
+      <obj_property name="ObjectShortName">pin_i2c_sclk_OBUF</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="system_top_level_i/i2c_config_0/sdat_inout_IBUF" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">system_top_level_i/i2c_config_0/sdat_inout_IBUF</obj_property>
+      <obj_property name="ObjectShortName">sdat_inout_IBUF</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="system_top_level_i/i2c_config_0/sdat_inout_OBUF" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">system_top_level_i/i2c_config_0/sdat_inout_OBUF</obj_property>
+      <obj_property name="ObjectShortName">sdat_inout_OBUF</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="system_top_level_i/i2c_config_0/sdat_inout_TRI" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">system_top_level_i/i2c_config_0/sdat_inout_TRI</obj_property>
+      <obj_property name="ObjectShortName">sdat_inout_TRI</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="system_top_level_i/i2c_config_0/U0/state_r_reg_n_0_" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">system_top_level_i/i2c_config_0/U0/state_r_reg_n_0_[0:0]</obj_property>
+      <obj_property name="ObjectShortName">state_r_reg_n_0_[0:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject fp_name="system_top_level_i/i2c_config_0/U0/state_r_reg_n_0_" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">system_top_level_i/i2c_config_0/U0/state_r_reg_n_0_[0:0]</obj_property>
+      <obj_property name="ObjectShortName">state_r_reg_n_0_[0:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject fp_name="system_top_level_i/i2c_config_0/U0/state_r_reg_n_0_" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">system_top_level_i/i2c_config_0/U0/state_r_reg_n_0_[0:0]</obj_property>
+      <obj_property name="ObjectShortName">state_r_reg_n_0_[0:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+</wave_config>

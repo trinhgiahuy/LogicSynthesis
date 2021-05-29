@@ -1,0 +1,431 @@
+
+*** Running vivado
+    with args -log system_top_level_wrapper.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source system_top_level_wrapper.tcl
+
+
+
+****** Vivado v2020.2 (64-bit)
+  **** SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+  **** IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source system_top_level_wrapper.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2020.2/data/ip'.
+INFO: [IP_Flow 19-5107] Inferred bus interface 'rst_n' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'clk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 'rst_n': Added interface parameter 'POLARITY' with value 'ACTIVE_LOW'.
+WARNING: [IP_Flow 19-3157] Bus Interface 'rst_n': Bus parameter POLARITY is ACTIVE_LOW but port 'rst_n' is not *resetn - please double check the POLARITY setting.
+WARNING: [IP_Flow 19-5661] Bus Interface 'clk' does not have any bus interfaces associated with it.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-5107] Inferred bus interface 'rst_n' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'clk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 'rst_n': Added interface parameter 'POLARITY' with value 'ACTIVE_LOW'.
+WARNING: [IP_Flow 19-3157] Bus Interface 'rst_n': Bus parameter POLARITY is ACTIVE_LOW but port 'rst_n' is not *resetn - please double check the POLARITY setting.
+WARNING: [IP_Flow 19-5661] Bus Interface 'clk' does not have any bus interfaces associated with it.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+Command: synth_design -top system_top_level_wrapper -part xc7z020clg400-1 -fsm_extraction one_hot
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 9468
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 1018.664 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'system_top_level_wrapper' [D:/logsyn/syn/synth_top/synth_top.gen/sources_1/bd/system_top_level/hdl/system_top_level_wrapper.vhd:29]
+INFO: [Synth 8-3491] module 'system_top_level' declared at 'd:/logsyn/syn/synth_top/synth_top.gen/sources_1/bd/system_top_level/synth/system_top_level.vhd:14' bound to instance 'system_top_level_i' of component 'system_top_level' [D:/logsyn/syn/synth_top/synth_top.gen/sources_1/bd/system_top_level/hdl/system_top_level_wrapper.vhd:45]
+INFO: [Synth 8-638] synthesizing module 'system_top_level' [d:/logsyn/syn/synth_top/synth_top.gen/sources_1/bd/system_top_level/synth/system_top_level.vhd:33]
+INFO: [Synth 8-3491] module 'system_top_level_clk_wiz_0_1' declared at 'd:/logsyn/syn/synth_top/synth_top.gen/sources_1/bd/system_top_level/ip/system_top_level_clk_wiz_0_1/system_top_level_clk_wiz_0_1.v:71' bound to instance 'clk_wiz_0' of component 'system_top_level_clk_wiz_0_1' [d:/logsyn/syn/synth_top/synth_top.gen/sources_1/bd/system_top_level/synth/system_top_level.vhd:93]
+INFO: [Synth 8-6157] synthesizing module 'system_top_level_clk_wiz_0_1' [d:/logsyn/syn/synth_top/synth_top.gen/sources_1/bd/system_top_level/ip/system_top_level_clk_wiz_0_1/system_top_level_clk_wiz_0_1.v:71]
+INFO: [Synth 8-6157] synthesizing module 'system_top_level_clk_wiz_0_1_clk_wiz' [d:/logsyn/syn/synth_top/synth_top.gen/sources_1/bd/system_top_level/ip/system_top_level_clk_wiz_0_1/system_top_level_clk_wiz_0_1_clk_wiz.v:69]
+INFO: [Synth 8-6157] synthesizing module 'IBUF' [D:/Xilinx/Vivado/2020.2/scripts/rt/data/unisim_comp.v:32983]
+	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
+	Parameter IBUF_DELAY_VALUE bound to: 0 - type: string 
+	Parameter IBUF_LOW_PWR bound to: TRUE - type: string 
+	Parameter IFD_DELAY_VALUE bound to: AUTO - type: string 
+	Parameter IOSTANDARD bound to: DEFAULT - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'IBUF' (1#1) [D:/Xilinx/Vivado/2020.2/scripts/rt/data/unisim_comp.v:32983]
+INFO: [Synth 8-6157] synthesizing module 'PLLE2_ADV' [D:/Xilinx/Vivado/2020.2/scripts/rt/data/unisim_comp.v:61526]
+	Parameter BANDWIDTH bound to: OPTIMIZED - type: string 
+	Parameter CLKFBOUT_MULT bound to: 58 - type: integer 
+	Parameter CLKFBOUT_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKIN1_PERIOD bound to: 8.000000 - type: double 
+	Parameter CLKIN2_PERIOD bound to: 0.000000 - type: double 
+	Parameter CLKOUT0_DIVIDE bound to: 29 - type: integer 
+	Parameter CLKOUT0_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT0_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT1_DIVIDE bound to: 118 - type: integer 
+	Parameter CLKOUT1_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT1_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT2_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT2_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT2_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT3_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT3_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT3_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT4_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT4_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT4_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT5_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT5_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT5_PHASE bound to: 0.000000 - type: double 
+	Parameter COMPENSATION bound to: ZHOLD - type: string 
+	Parameter DIVCLK_DIVIDE bound to: 5 - type: integer 
+	Parameter IS_CLKINSEL_INVERTED bound to: 1'b0 
+	Parameter IS_PWRDWN_INVERTED bound to: 1'b0 
+	Parameter IS_RST_INVERTED bound to: 1'b0 
+	Parameter REF_JITTER1 bound to: 0.010000 - type: double 
+	Parameter REF_JITTER2 bound to: 0.010000 - type: double 
+	Parameter STARTUP_WAIT bound to: FALSE - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'PLLE2_ADV' (2#1) [D:/Xilinx/Vivado/2020.2/scripts/rt/data/unisim_comp.v:61526]
+INFO: [Synth 8-6157] synthesizing module 'BUFG' [D:/Xilinx/Vivado/2020.2/scripts/rt/data/unisim_comp.v:1083]
+INFO: [Synth 8-6155] done synthesizing module 'BUFG' (3#1) [D:/Xilinx/Vivado/2020.2/scripts/rt/data/unisim_comp.v:1083]
+INFO: [Synth 8-6157] synthesizing module 'BUFGCE' [D:/Xilinx/Vivado/2020.2/scripts/rt/data/unisim_comp.v:1093]
+	Parameter CE_TYPE bound to: SYNC - type: string 
+	Parameter IS_CE_INVERTED bound to: 1'b0 
+	Parameter IS_I_INVERTED bound to: 1'b0 
+	Parameter SIM_DEVICE bound to: ULTRASCALE - type: string 
+	Parameter STARTUP_SYNC bound to: FALSE - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'BUFGCE' (4#1) [D:/Xilinx/Vivado/2020.2/scripts/rt/data/unisim_comp.v:1093]
+INFO: [Synth 8-6157] synthesizing module 'BUFH' [D:/Xilinx/Vivado/2020.2/scripts/rt/data/unisim_comp.v:1319]
+INFO: [Synth 8-6155] done synthesizing module 'BUFH' (5#1) [D:/Xilinx/Vivado/2020.2/scripts/rt/data/unisim_comp.v:1319]
+INFO: [Synth 8-6155] done synthesizing module 'system_top_level_clk_wiz_0_1_clk_wiz' (6#1) [d:/logsyn/syn/synth_top/synth_top.gen/sources_1/bd/system_top_level/ip/system_top_level_clk_wiz_0_1/system_top_level_clk_wiz_0_1_clk_wiz.v:69]
+INFO: [Synth 8-6155] done synthesizing module 'system_top_level_clk_wiz_0_1' (7#1) [d:/logsyn/syn/synth_top/synth_top.gen/sources_1/bd/system_top_level/ip/system_top_level_clk_wiz_0_1/system_top_level_clk_wiz_0_1.v:71]
+INFO: [Synth 8-3491] module 'system_top_level_i2c_config_0_0' declared at 'd:/logsyn/syn/synth_top/synth_top.gen/sources_1/bd/system_top_level/ip/system_top_level_i2c_config_0_0/synth/system_top_level_i2c_config_0_0.vhd:56' bound to instance 'i2c_config_0' of component 'system_top_level_i2c_config_0_0' [d:/logsyn/syn/synth_top/synth_top.gen/sources_1/bd/system_top_level/synth/system_top_level.vhd:100]
+INFO: [Synth 8-638] synthesizing module 'system_top_level_i2c_config_0_0' [d:/logsyn/syn/synth_top/synth_top.gen/sources_1/bd/system_top_level/ip/system_top_level_i2c_config_0_0/synth/system_top_level_i2c_config_0_0.vhd:67]
+	Parameter ref_clk_freq_g bound to: 50000000 - type: integer 
+	Parameter i2c_freq_g bound to: 20000 - type: integer 
+	Parameter n_params_g bound to: 15 - type: integer 
+	Parameter n_leds_g bound to: 4 - type: integer 
+INFO: [Synth 8-3491] module 'i2c_config' declared at 'D:/logsyn/vhd/i2c_config.vhd:26' bound to instance 'U0' of component 'i2c_config' [d:/logsyn/syn/synth_top/synth_top.gen/sources_1/bd/system_top_level/ip/system_top_level_i2c_config_0_0/synth/system_top_level_i2c_config_0_0.vhd:101]
+INFO: [Synth 8-638] synthesizing module 'i2c_config' [D:/logsyn/vhd/i2c_config.vhd:43]
+	Parameter ref_clk_freq_g bound to: 50000000 - type: integer 
+	Parameter i2c_freq_g bound to: 20000 - type: integer 
+	Parameter n_params_g bound to: 15 - type: integer 
+	Parameter n_leds_g bound to: 4 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'i2c_config' (8#1) [D:/logsyn/vhd/i2c_config.vhd:43]
+INFO: [Synth 8-256] done synthesizing module 'system_top_level_i2c_config_0_0' (9#1) [d:/logsyn/syn/synth_top/synth_top.gen/sources_1/bd/system_top_level/ip/system_top_level_i2c_config_0_0/synth/system_top_level_i2c_config_0_0.vhd:67]
+INFO: [Synth 8-3491] module 'system_top_level_synthesizer_0_0' declared at 'd:/logsyn/syn/synth_top/synth_top.gen/sources_1/bd/system_top_level/ip/system_top_level_synthesizer_0_0/synth/system_top_level_synthesizer_0_0.vhd:56' bound to instance 'synthesizer_0' of component 'system_top_level_synthesizer_0_0' [d:/logsyn/syn/synth_top/synth_top.gen/sources_1/bd/system_top_level/synth/system_top_level.vhd:109]
+INFO: [Synth 8-638] synthesizing module 'system_top_level_synthesizer_0_0' [d:/logsyn/syn/synth_top/synth_top.gen/sources_1/bd/system_top_level/ip/system_top_level_synthesizer_0_0/synth/system_top_level_synthesizer_0_0.vhd:67]
+	Parameter clk_freq_g bound to: 12288000 - type: integer 
+	Parameter sample_rate_g bound to: 48000 - type: integer 
+	Parameter data_width_g bound to: 16 - type: integer 
+	Parameter n_keys_g bound to: 4 - type: integer 
+INFO: [Synth 8-3491] module 'synthesizer' declared at 'D:/logsyn/vhd/synthesizer.vhd:26' bound to instance 'U0' of component 'synthesizer' [d:/logsyn/syn/synth_top/synth_top.gen/sources_1/bd/system_top_level/ip/system_top_level_synthesizer_0_0/synth/system_top_level_synthesizer_0_0.vhd:101]
+INFO: [Synth 8-638] synthesizing module 'synthesizer' [D:/logsyn/vhd/synthesizer.vhd:42]
+	Parameter clk_freq_g bound to: 12288000 - type: integer 
+	Parameter sample_rate_g bound to: 48000 - type: integer 
+	Parameter data_width_g bound to: 16 - type: integer 
+	Parameter n_keys_g bound to: 4 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'wave_gen' [D:/logsyn/vhd/wave_gen.vhd:38]
+	Parameter width_g bound to: 16 - type: integer 
+	Parameter step_g bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'wave_gen' (10#1) [D:/logsyn/vhd/wave_gen.vhd:38]
+INFO: [Synth 8-638] synthesizing module 'wave_gen__parameterized0' [D:/logsyn/vhd/wave_gen.vhd:38]
+	Parameter width_g bound to: 16 - type: integer 
+	Parameter step_g bound to: 2 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'wave_gen__parameterized0' (10#1) [D:/logsyn/vhd/wave_gen.vhd:38]
+INFO: [Synth 8-638] synthesizing module 'wave_gen__parameterized1' [D:/logsyn/vhd/wave_gen.vhd:38]
+	Parameter width_g bound to: 16 - type: integer 
+	Parameter step_g bound to: 4 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'wave_gen__parameterized1' (10#1) [D:/logsyn/vhd/wave_gen.vhd:38]
+INFO: [Synth 8-638] synthesizing module 'wave_gen__parameterized2' [D:/logsyn/vhd/wave_gen.vhd:38]
+	Parameter width_g bound to: 16 - type: integer 
+	Parameter step_g bound to: 8 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'wave_gen__parameterized2' (10#1) [D:/logsyn/vhd/wave_gen.vhd:38]
+	Parameter num_of_operands_g bound to: 4 - type: integer 
+	Parameter operand_width_g bound to: 16 - type: integer 
+INFO: [Synth 8-3491] module 'multi_port_adder' declared at 'D:/logsyn/vhd/multi_port_adder.vhd:26' bound to instance 'i_multi_port_adder' of component 'multi_port_adder' [D:/logsyn/vhd/synthesizer.vhd:149]
+INFO: [Synth 8-638] synthesizing module 'multi_port_adder' [D:/logsyn/vhd/multi_port_adder.vhd:37]
+	Parameter operand_width_g bound to: 16 - type: integer 
+	Parameter num_of_operands_g bound to: 4 - type: integer 
+	Parameter operand_width_g bound to: 16 - type: integer 
+INFO: [Synth 8-3491] module 'adder' declared at 'D:/logsyn/vhd/adder.vhd:25' bound to instance 'add_1' of component 'adder' [D:/logsyn/vhd/multi_port_adder.vhd:63]
+INFO: [Synth 8-638] synthesizing module 'adder' [D:/logsyn/vhd/adder.vhd:35]
+	Parameter operand_width_g bound to: 16 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'adder' (11#1) [D:/logsyn/vhd/adder.vhd:35]
+	Parameter operand_width_g bound to: 16 - type: integer 
+INFO: [Synth 8-3491] module 'adder' declared at 'D:/logsyn/vhd/adder.vhd:25' bound to instance 'add_2' of component 'adder' [D:/logsyn/vhd/multi_port_adder.vhd:74]
+	Parameter operand_width_g bound to: 17 - type: integer 
+INFO: [Synth 8-3491] module 'adder' declared at 'D:/logsyn/vhd/adder.vhd:25' bound to instance 'add_3' of component 'adder' [D:/logsyn/vhd/multi_port_adder.vhd:84]
+INFO: [Synth 8-638] synthesizing module 'adder__parameterized2' [D:/logsyn/vhd/adder.vhd:35]
+	Parameter operand_width_g bound to: 17 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'adder__parameterized2' (11#1) [D:/logsyn/vhd/adder.vhd:35]
+INFO: [Synth 8-256] done synthesizing module 'multi_port_adder' (12#1) [D:/logsyn/vhd/multi_port_adder.vhd:37]
+INFO: [Synth 8-638] synthesizing module 'audio_ctrl' [D:/logsyn/vhd/audio_ctrl.vhd:40]
+	Parameter ref_clk_freq_g bound to: 12288000 - type: integer 
+	Parameter sample_rate_g bound to: 48000 - type: integer 
+	Parameter data_width_g bound to: 16 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'audio_ctrl' (13#1) [D:/logsyn/vhd/audio_ctrl.vhd:40]
+INFO: [Synth 8-256] done synthesizing module 'synthesizer' (14#1) [D:/logsyn/vhd/synthesizer.vhd:42]
+INFO: [Synth 8-256] done synthesizing module 'system_top_level_synthesizer_0_0' (15#1) [d:/logsyn/syn/synth_top/synth_top.gen/sources_1/bd/system_top_level/ip/system_top_level_synthesizer_0_0/synth/system_top_level_synthesizer_0_0.vhd:67]
+INFO: [Synth 8-3491] module 'system_top_level_util_vector_logic_0_0' declared at 'd:/logsyn/syn/synth_top/synth_top.gen/sources_1/bd/system_top_level/ip/system_top_level_util_vector_logic_0_0/synth/system_top_level_util_vector_logic_0_0.v:57' bound to instance 'util_vector_logic_0' of component 'system_top_level_util_vector_logic_0_0' [d:/logsyn/syn/synth_top/synth_top.gen/sources_1/bd/system_top_level/synth/system_top_level.vhd:118]
+INFO: [Synth 8-6157] synthesizing module 'system_top_level_util_vector_logic_0_0' [d:/logsyn/syn/synth_top/synth_top.gen/sources_1/bd/system_top_level/ip/system_top_level_util_vector_logic_0_0/synth/system_top_level_util_vector_logic_0_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'util_vector_logic_v2_0_1_util_vector_logic' [d:/logsyn/syn/synth_top/synth_top.gen/sources_1/bd/system_top_level/ipshared/3f90/hdl/util_vector_logic_v2_0_vl_rfs.v:45]
+	Parameter C_OPERATION bound to: and - type: string 
+	Parameter C_SIZE bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'util_vector_logic_v2_0_1_util_vector_logic' (16#1) [d:/logsyn/syn/synth_top/synth_top.gen/sources_1/bd/system_top_level/ipshared/3f90/hdl/util_vector_logic_v2_0_vl_rfs.v:45]
+INFO: [Synth 8-6155] done synthesizing module 'system_top_level_util_vector_logic_0_0' (17#1) [d:/logsyn/syn/synth_top/synth_top.gen/sources_1/bd/system_top_level/ip/system_top_level_util_vector_logic_0_0/synth/system_top_level_util_vector_logic_0_0.v:57]
+INFO: [Synth 8-256] done synthesizing module 'system_top_level' (18#1) [d:/logsyn/syn/synth_top/synth_top.gen/sources_1/bd/system_top_level/synth/system_top_level.vhd:33]
+INFO: [Synth 8-256] done synthesizing module 'system_top_level_wrapper' (19#1) [D:/logsyn/syn/synth_top/synth_top.gen/sources_1/bd/system_top_level/hdl/system_top_level_wrapper.vhd:29]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:11 . Memory (MB): peak = 1018.664 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 1018.664 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 1018.664 ; gain = 0.000
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 1018.664 ; gain = 0.000
+WARNING: [Netlist 29-345] The value of SIM_DEVICE on instance 'system_top_level_i/clk_wiz_0/inst/clkout1_buf' of type 'BUFGCE' is 'ULTRASCALE'; it is being changed to match the current FPGA architecture, '7SERIES'. For functional simulation to match hardware behavior, the value of SIM_DEVICE should be changed in the source netlist. 
+WARNING: [Netlist 29-345] The value of SIM_DEVICE on instance 'system_top_level_i/clk_wiz_0/inst/clkout2_buf' of type 'BUFGCE' is 'ULTRASCALE'; it is being changed to match the current FPGA architecture, '7SERIES'. For functional simulation to match hardware behavior, the value of SIM_DEVICE should be changed in the source netlist. 
+INFO: [Netlist 29-17] Analyzing 3 Unisim elements for replacement
+WARNING: [Netlist 29-345] The value of SIM_DEVICE on instance 'system_top_level_i/clk_wiz_0/inst/clkout1_buf' of type 'BUFGCTRL' is 'ULTRASCALE'; it is being changed to match the current FPGA architecture, '7SERIES'. For functional simulation to match hardware behavior, the value of SIM_DEVICE should be changed in the source netlist. 
+WARNING: [Netlist 29-345] The value of SIM_DEVICE on instance 'system_top_level_i/clk_wiz_0/inst/clkout2_buf' of type 'BUFGCTRL' is 'ULTRASCALE'; it is being changed to match the current FPGA architecture, '7SERIES'. For functional simulation to match hardware behavior, the value of SIM_DEVICE should be changed in the source netlist. 
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [d:/logsyn/syn/synth_top/synth_top.gen/sources_1/bd/system_top_level/ip/system_top_level_clk_wiz_0_1/system_top_level_clk_wiz_0_1_board.xdc] for cell 'system_top_level_i/clk_wiz_0/inst'
+Finished Parsing XDC File [d:/logsyn/syn/synth_top/synth_top.gen/sources_1/bd/system_top_level/ip/system_top_level_clk_wiz_0_1/system_top_level_clk_wiz_0_1_board.xdc] for cell 'system_top_level_i/clk_wiz_0/inst'
+Parsing XDC File [d:/logsyn/syn/synth_top/synth_top.gen/sources_1/bd/system_top_level/ip/system_top_level_clk_wiz_0_1/system_top_level_clk_wiz_0_1.xdc] for cell 'system_top_level_i/clk_wiz_0/inst'
+Finished Parsing XDC File [d:/logsyn/syn/synth_top/synth_top.gen/sources_1/bd/system_top_level/ip/system_top_level_clk_wiz_0_1/system_top_level_clk_wiz_0_1.xdc] for cell 'system_top_level_i/clk_wiz_0/inst'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [d:/logsyn/syn/synth_top/synth_top.gen/sources_1/bd/system_top_level/ip/system_top_level_clk_wiz_0_1/system_top_level_clk_wiz_0_1.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/system_top_level_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/system_top_level_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+INFO: [Timing 38-2] Deriving generated clocks
+Parsing XDC File [D:/logsyn/xdc/synth.xdc]
+Finished Parsing XDC File [D:/logsyn/xdc/synth.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/logsyn/xdc/synth.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/system_top_level_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/system_top_level_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [D:/logsyn/syn/synth_top/synth_top.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [D:/logsyn/syn/synth_top/synth_top.runs/synth_1/dont_touch.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/logsyn/syn/synth_top/synth_top.runs/synth_1/dont_touch.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/system_top_level_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/system_top_level_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+INFO: [Timing 38-2] Deriving generated clocks
+Parsing XDC File [d:/logsyn/syn/synth_top/synth_top.gen/sources_1/bd/system_top_level/ip/system_top_level_clk_wiz_0_1/system_top_level_clk_wiz_0_1_late.xdc] for cell 'system_top_level_i/clk_wiz_0/inst'
+Finished Parsing XDC File [d:/logsyn/syn/synth_top/synth_top.gen/sources_1/bd/system_top_level/ip/system_top_level_clk_wiz_0_1/system_top_level_clk_wiz_0_1_late.xdc] for cell 'system_top_level_i/clk_wiz_0/inst'
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1101.363 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 2 instances were transformed.
+  BUFGCE => BUFGCTRL: 2 instances
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.022 . Memory (MB): peak = 1101.363 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:17 ; elapsed = 00:00:22 . Memory (MB): peak = 1101.363 ; gain = 82.699
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:17 ; elapsed = 00:00:22 . Memory (MB): peak = 1101.363 ; gain = 82.699
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property KEEP_HIERARCHY = SOFT for system_top_level_i/clk_wiz_0/inst. (constraint file  D:/logsyn/syn/synth_top/synth_top.runs/synth_1/dont_touch.xdc, line 22).
+Applied set_property KEEP_HIERARCHY = SOFT for system_top_level_i. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_top_level_i/clk_wiz_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_top_level_i/util_vector_logic_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_top_level_i/i2c_config_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_top_level_i/synthesizer_0. (constraint file  auto generated constraint).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:22 . Memory (MB): peak = 1101.363 ; gain = 82.699
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:17 ; elapsed = 00:00:23 . Memory (MB): peak = 1101.363 ; gain = 82.699
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   18 Bit       Adders := 1     
+	   2 Input   17 Bit       Adders := 2     
+	   2 Input    7 Bit       Adders := 1     
+	   2 Input    5 Bit       Adders := 1     
+	   2 Input    4 Bit       Adders := 2     
+	   2 Input    2 Bit       Adders := 1     
++---Registers : 
+	               18 Bit    Registers := 1     
+	               17 Bit    Registers := 2     
+	               16 Bit    Registers := 2     
+	                8 Bit    Registers := 2     
+	                7 Bit    Registers := 1     
+	                5 Bit    Registers := 1     
+	                4 Bit    Registers := 2     
+	                3 Bit    Registers := 2     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 9     
++---Muxes : 
+	   2 Input   16 Bit        Muxes := 2     
+	   2 Input    7 Bit        Muxes := 1     
+	   2 Input    5 Bit        Muxes := 1     
+	   8 Input    4 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 1     
+	   8 Input    3 Bit        Muxes := 1     
+	   9 Input    3 Bit        Muxes := 1     
+	   2 Input    3 Bit        Muxes := 1     
+	   2 Input    2 Bit        Muxes := 2     
+	   8 Input    1 Bit        Muxes := 8     
+	   2 Input    1 Bit        Muxes := 21    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:26 . Memory (MB): peak = 1101.363 ; gain = 82.699
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:27 ; elapsed = 00:00:33 . Memory (MB): peak = 1101.363 ; gain = 82.699
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:27 ; elapsed = 00:00:34 . Memory (MB): peak = 1101.363 ; gain = 82.699
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:28 ; elapsed = 00:00:34 . Memory (MB): peak = 1101.363 ; gain = 82.699
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:32 ; elapsed = 00:00:39 . Memory (MB): peak = 1105.082 ; gain = 86.418
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:32 ; elapsed = 00:00:39 . Memory (MB): peak = 1105.082 ; gain = 86.418
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:32 ; elapsed = 00:00:39 . Memory (MB): peak = 1105.082 ; gain = 86.418
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:32 ; elapsed = 00:00:39 . Memory (MB): peak = 1105.082 ; gain = 86.418
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:32 ; elapsed = 00:00:39 . Memory (MB): peak = 1105.082 ; gain = 86.418
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:32 ; elapsed = 00:00:39 . Memory (MB): peak = 1105.082 ; gain = 86.418
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+----------+------+
+|      |Cell      |Count |
++------+----------+------+
+|1     |BUFG      |     1|
+|2     |BUFGCE    |     2|
+|3     |BUFH      |     2|
+|4     |CARRY4    |    31|
+|5     |LUT1      |     6|
+|6     |LUT2      |   125|
+|7     |LUT3      |    65|
+|8     |LUT4      |    49|
+|9     |LUT5      |    14|
+|10    |LUT6      |    26|
+|11    |MUXF7     |    10|
+|12    |MUXF8     |     5|
+|13    |PLLE2_ADV |     1|
+|14    |FDCE      |   160|
+|15    |FDPE      |    14|
+|16    |FDRE      |    16|
+|17    |IBUF      |     6|
+|18    |IOBUF     |     1|
+|19    |OBUF      |     9|
++------+----------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:32 ; elapsed = 00:00:39 . Memory (MB): peak = 1105.082 ; gain = 86.418
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:21 ; elapsed = 00:00:34 . Memory (MB): peak = 1105.082 ; gain = 3.719
+Synthesis Optimization Complete : Time (s): cpu = 00:00:32 ; elapsed = 00:00:39 . Memory (MB): peak = 1105.082 ; gain = 86.418
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1111.887 ; gain = 0.000
+WARNING: [Netlist 29-345] The value of SIM_DEVICE on instance 'system_top_level_i/clk_wiz_0/inst/clkout1_buf' of type 'BUFGCE' is 'ULTRASCALE'; it is being changed to match the current FPGA architecture, '7SERIES'. For functional simulation to match hardware behavior, the value of SIM_DEVICE should be changed in the source netlist. 
+WARNING: [Netlist 29-345] The value of SIM_DEVICE on instance 'system_top_level_i/clk_wiz_0/inst/clkout2_buf' of type 'BUFGCE' is 'ULTRASCALE'; it is being changed to match the current FPGA architecture, '7SERIES'. For functional simulation to match hardware behavior, the value of SIM_DEVICE should be changed in the source netlist. 
+INFO: [Netlist 29-17] Analyzing 50 Unisim elements for replacement
+WARNING: [Netlist 29-345] The value of SIM_DEVICE on instance 'system_top_level_i/clk_wiz_0/inst/clkout1_buf' of type 'BUFGCTRL' is 'ULTRASCALE'; it is being changed to match the current FPGA architecture, '7SERIES'. For functional simulation to match hardware behavior, the value of SIM_DEVICE should be changed in the source netlist. 
+WARNING: [Netlist 29-345] The value of SIM_DEVICE on instance 'system_top_level_i/clk_wiz_0/inst/clkout2_buf' of type 'BUFGCTRL' is 'ULTRASCALE'; it is being changed to match the current FPGA architecture, '7SERIES'. For functional simulation to match hardware behavior, the value of SIM_DEVICE should be changed in the source netlist. 
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1125.359 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 3 instances were transformed.
+  BUFGCE => BUFGCTRL: 2 instances
+  IOBUF => IOBUF (IBUF, OBUFT): 1 instance 
+
+INFO: [Common 17-83] Releasing license: Synthesis
+91 Infos, 16 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:39 ; elapsed = 00:01:00 . Memory (MB): peak = 1125.359 ; gain = 106.695
+INFO: [Common 17-1381] The checkpoint 'D:/logsyn/syn/synth_top/synth_top.runs/synth_1/system_top_level_wrapper.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file system_top_level_wrapper_utilization_synth.rpt -pb system_top_level_wrapper_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Tue Apr  6 21:16:05 2021...

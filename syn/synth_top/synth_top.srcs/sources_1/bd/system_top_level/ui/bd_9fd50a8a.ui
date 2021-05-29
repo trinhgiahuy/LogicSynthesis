@@ -1,0 +1,39 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"1.09342",
+   "Default View_TopLeft":"-32,-194",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:10.0 non-TLS
+#  -string -flagsOSRD
+preplace port pin_rst_n -pg 1 -lvl 0 -x -40 -y -140 -defaultsOSRD
+preplace port pin_i2c_sclk -pg 1 -lvl 4 -x 1080 -y -110 -defaultsOSRD
+preplace port pin_aud_mclk -pg 1 -lvl 4 -x 1080 -y -70 -defaultsOSRD
+preplace port pin_aud_lrclk -pg 1 -lvl 4 -x 1080 -y 270 -defaultsOSRD
+preplace port pin_aud_data -pg 1 -lvl 4 -x 1080 -y 240 -defaultsOSRD
+preplace port pin_i2c_sdata -pg 1 -lvl 4 -x 1080 -y -140 -defaultsOSRD
+preplace port pin_aud_bitclk -pg 1 -lvl 4 -x 1080 -y 210 -defaultsOSRD
+preplace port pin_clk125mhz -pg 1 -lvl 0 -x -40 -y -60 -defaultsOSRD
+preplace portBus pin_keys -pg 1 -lvl 0 -x -40 -y 280 -defaultsOSRD
+preplace portBus pin_leds_i2c -pg 1 -lvl 4 -x 1080 -y 0 -defaultsOSRD
+preplace inst clk_wiz_0 -pg 1 -lvl 1 -x 140 -y -60 -defaultsOSRD
+preplace inst util_vector_logic_0 -pg 1 -lvl 1 -x 140 -y 170 -defaultsOSRD
+preplace inst i2c_config_0 -pg 1 -lvl 2 -x 460 -y -50 -defaultsOSRD
+preplace inst synthesizer_0 -pg 1 -lvl 3 -x 900 -y 240 -defaultsOSRD
+preplace netloc pin_rst_n_1 1 0 1 -20 -140n
+preplace netloc clk_wiz_0_locked 1 0 2 -10 -140 280
+preplace netloc clk_wiz_0_clk_out2 1 1 3 290 -140 610J -70 N
+preplace netloc clk_wiz_0_clk_out1 1 1 1 300 -80n
+preplace netloc util_vector_logic_0_Res 1 1 2 300 240 N
+preplace netloc Net 1 2 2 620 -140 NJ
+preplace netloc i2c_config_0_sclk_out 1 2 2 630 -110 NJ
+preplace netloc synthesizer_0_aud_bclk_out 1 3 1 1030 210n
+preplace netloc synthesizer_0_aud_data_out 1 3 1 N 240
+preplace netloc synthesizer_0_aud_lrclk_out 1 3 1 1030 260n
+preplace netloc pin_clk125mhz_1 1 0 1 N -60
+preplace netloc pin_keys_1 1 0 3 NJ 280 NJ 280 620
+preplace netloc i2c_config_0_param_status_out 1 2 2 600 0 NJ
+levelinfo -pg 1 -40 140 460 900 1080
+pagesize -pg 1 -db -bbox -sgen -190 -160 1240 400
+"
+}
+0

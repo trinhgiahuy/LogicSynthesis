@@ -1,0 +1,143 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/logsyn/9
+T_opt
+!s110 1606767437
+VY63YU8I_C[=IohES9zQiC0
+04 19 10 work tb_multi_port_adder test_bench 1
+=1-9828a6407864-5fc5534c-37b-7764
+o-quiet -auto_acc_if_foreign -work work
+tCvgOpt 0
+n@_opt
+OE;O;10.7d;67
+R0
+Eadder
+Z1 w1605112012
+Z2 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+Z5 dD:/logsyn/test
+Z6 8D:/logsyn/vhd/adder.vhd
+Z7 FD:/logsyn/vhd/adder.vhd
+l0
+L25
+V9e[VG>4oPT??OVaRD>07M2
+!s100 O<bm0ES:Ik5a:eW0g7Uge2
+Z8 OE;C;10.7d;67
+32
+Z9 !s110 1606767567
+!i10b 1
+Z10 !s108 1606767567.000000
+Z11 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|D:/logsyn/vhd/adder.vhd|
+Z12 !s107 D:/logsyn/vhd/adder.vhd|
+!i113 0
+Z13 o-work work -2002 -explicit
+Z14 tExplicit 1 CvgOpt 0
+Artl
+R2
+R3
+R4
+DEx4 work 5 adder 0 22 9e[VG>4oPT??OVaRD>07M2
+l37
+L35
+VJbbF^T0SeC5>UJ2SDCJA23
+!s100 T0a8VMQd9M8:3E_4c>na41
+R8
+32
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 0
+R13
+R14
+Emulti_port_adder
+Z15 w1606767552
+R2
+R3
+R4
+R5
+Z16 8D:/logsyn/vhd/multi_port_adder.vhd
+Z17 FD:/logsyn/vhd/multi_port_adder.vhd
+l0
+L26
+VoJ6jhGC?f2zd4SzF^aPS23
+!s100 F3:C]LemM75C=l<Uz;dU30
+R8
+32
+R9
+!i10b 1
+R10
+Z18 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|D:/logsyn/vhd/multi_port_adder.vhd|
+Z19 !s107 D:/logsyn/vhd/multi_port_adder.vhd|
+!i113 0
+R13
+R14
+Astructural
+R2
+R3
+R4
+DEx4 work 16 multi_port_adder 0 22 oJ6jhGC?f2zd4SzF^aPS23
+l61
+L37
+V;VTXib=Ig]2iN6<RIzD4J3
+!s100 `F4Tag^m9]^@ES4LXiZXX2
+R8
+32
+!s110 1606767419
+!i10b 1
+!s108 1606767419.000000
+R18
+R19
+!i113 0
+R13
+R14
+Etb_multi_port_adder
+Z20 w1606675422
+R2
+R3
+R4
+R5
+Z21 8D:/logsyn/tb/tb_multi_port_adder.vhd
+Z22 FD:/logsyn/tb/tb_multi_port_adder.vhd
+l0
+L27
+V7^MX?o@o3ecMjiZIUPzHN1
+!s100 FW26mcig7<1OJb_T6JoBL2
+R8
+32
+Z23 !s110 1606767566
+!i10b 1
+Z24 !s108 1606767566.000000
+Z25 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|D:/logsyn/tb/tb_multi_port_adder.vhd|
+Z26 !s107 D:/logsyn/tb/tb_multi_port_adder.vhd|
+!i113 0
+R13
+R14
+Atest_bench
+R2
+R3
+R4
+DEx4 work 19 tb_multi_port_adder 0 22 7^MX?o@o3ecMjiZIUPzHN1
+l60
+L31
+VA8CTE2YVbT5?DD;FLB2ZU1
+!s100 c[O0bX6T]E1T;FJcZ9^^W3
+R8
+32
+R23
+!i10b 1
+R24
+R25
+R26
+!i113 0
+R13
+R14

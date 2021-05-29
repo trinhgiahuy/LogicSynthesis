@@ -1,0 +1,441 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0xDD0F48D83207D49D",
+      "device": "xc7z020clg400-1",
+      "gen_directory": "../../../../synth_top.gen/sources_1/bd/system_top_level",
+      "name": "system_top_level",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "synth_flow_mode": "None",
+      "tool_version": "2020.2",
+      "validated": "true"
+    },
+    "design_tree": {
+      "clk_wiz_0": "",
+      "util_vector_logic_0": "",
+      "i2c_config_0": "",
+      "synthesizer_0": ""
+    },
+    "ports": {
+      "pin_rst_n": {
+        "direction": "I",
+        "parameters": {
+          "PortType": {
+            "value": "undef",
+            "value_src": "ip_prop"
+          },
+          "PortType.PROP_SRC": {
+            "value": "false",
+            "value_src": "ip_prop"
+          }
+        }
+      },
+      "pin_keys": {
+        "direction": "I",
+        "left": "3",
+        "right": "0",
+        "parameters": {
+          "PortType": {
+            "value": "undef",
+            "value_src": "ip_prop"
+          },
+          "PortType.PROP_SRC": {
+            "value": "false",
+            "value_src": "ip_prop"
+          }
+        }
+      },
+      "pin_i2c_sclk": {
+        "direction": "O"
+      },
+      "pin_leds_i2c": {
+        "direction": "O",
+        "left": "3",
+        "right": "0",
+        "parameters": {
+          "PortType": {
+            "value": "undef",
+            "value_src": "ip_prop"
+          },
+          "PortType.PROP_SRC": {
+            "value": "false",
+            "value_src": "ip_prop"
+          }
+        }
+      },
+      "pin_aud_mclk": {
+        "direction": "O",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "system_top_level_clk_wiz_0_1_clk_out1",
+            "value_src": "ip_prop"
+          },
+          "FREQ_HZ": {
+            "value": "12288135",
+            "value_src": "ip_prop"
+          },
+          "PHASE": {
+            "value": "0.0",
+            "value_src": "ip_prop"
+          }
+        }
+      },
+      "pin_aud_lrclk": {
+        "direction": "O"
+      },
+      "pin_aud_data": {
+        "direction": "O"
+      },
+      "pin_i2c_sdata": {
+        "direction": "IO"
+      },
+      "pin_aud_bitclk": {
+        "direction": "O"
+      },
+      "pin_clk125mhz": {
+        "direction": "I"
+      }
+    },
+    "components": {
+      "clk_wiz_0": {
+        "vlnv": "xilinx.com:ip:clk_wiz:6.0",
+        "xci_name": "system_top_level_clk_wiz_0_1",
+        "xci_path": "ip\\system_top_level_clk_wiz_0_1\\system_top_level_clk_wiz_0_1.xci",
+        "inst_hier_path": "clk_wiz_0",
+        "parameters": {
+          "CLKIN1_JITTER_PS": {
+            "value": "80.0"
+          },
+          "CLKIN2_JITTER_PS": {
+            "value": "89.99"
+          },
+          "CLKOUT1_DRIVES": {
+            "value": "BUFGCE"
+          },
+          "CLKOUT1_JITTER": {
+            "value": "156.850"
+          },
+          "CLKOUT1_PHASE_ERROR": {
+            "value": "220.897"
+          },
+          "CLKOUT1_REQUESTED_OUT_FREQ": {
+            "value": "50.000"
+          },
+          "CLKOUT2_DRIVES": {
+            "value": "BUFGCE"
+          },
+          "CLKOUT2_JITTER": {
+            "value": "200.289"
+          },
+          "CLKOUT2_PHASE_ERROR": {
+            "value": "220.897"
+          },
+          "CLKOUT2_REQUESTED_OUT_FREQ": {
+            "value": "12.288"
+          },
+          "CLKOUT2_USED": {
+            "value": "true"
+          },
+          "CLKOUT3_DRIVES": {
+            "value": "BUFGCE"
+          },
+          "CLKOUT4_DRIVES": {
+            "value": "BUFGCE"
+          },
+          "CLKOUT5_DRIVES": {
+            "value": "BUFGCE"
+          },
+          "CLKOUT6_DRIVES": {
+            "value": "BUFGCE"
+          },
+          "CLKOUT7_DRIVES": {
+            "value": "BUFGCE"
+          },
+          "FEEDBACK_SOURCE": {
+            "value": "FDBK_AUTO"
+          },
+          "MMCM_BANDWIDTH": {
+            "value": "OPTIMIZED"
+          },
+          "MMCM_CLKFBOUT_MULT_F": {
+            "value": "58"
+          },
+          "MMCM_CLKIN1_PERIOD": {
+            "value": "8.000"
+          },
+          "MMCM_CLKIN2_PERIOD": {
+            "value": "10.000"
+          },
+          "MMCM_CLKOUT0_DIVIDE_F": {
+            "value": "29"
+          },
+          "MMCM_CLKOUT1_DIVIDE": {
+            "value": "118"
+          },
+          "MMCM_COMPENSATION": {
+            "value": "ZHOLD"
+          },
+          "MMCM_DIVCLK_DIVIDE": {
+            "value": "5"
+          },
+          "NUM_OUT_CLKS": {
+            "value": "2"
+          },
+          "PLL_CLKIN_PERIOD": {
+            "value": "8.000"
+          },
+          "PRIMITIVE": {
+            "value": "PLL"
+          },
+          "PRIM_IN_FREQ": {
+            "value": "125.000"
+          },
+          "PRIM_SOURCE": {
+            "value": "Single_ended_clock_capable_pin"
+          },
+          "SECONDARY_SOURCE": {
+            "value": "Single_ended_clock_capable_pin"
+          },
+          "USE_INCLK_SWITCHOVER": {
+            "value": "false"
+          },
+          "USE_PHASE_ALIGNMENT": {
+            "value": "false"
+          },
+          "USE_RESET": {
+            "value": "false"
+          },
+          "USE_SAFE_CLOCK_STARTUP": {
+            "value": "true"
+          }
+        }
+      },
+      "util_vector_logic_0": {
+        "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
+        "xci_name": "system_top_level_util_vector_logic_0_0",
+        "xci_path": "ip\\system_top_level_util_vector_logic_0_0\\system_top_level_util_vector_logic_0_0.xci",
+        "inst_hier_path": "util_vector_logic_0",
+        "parameters": {
+          "C_OPERATION": {
+            "value": "and"
+          },
+          "C_SIZE": {
+            "value": "1"
+          }
+        }
+      },
+      "i2c_config_0": {
+        "vlnv": "xilinx.com:module_ref:i2c_config:1.0",
+        "xci_name": "system_top_level_i2c_config_0_0",
+        "xci_path": "ip\\system_top_level_i2c_config_0_0\\system_top_level_i2c_config_0_0.xci",
+        "inst_hier_path": "i2c_config_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "i2c_config",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "FREQ_HZ": {
+                "value": "50000000",
+                "value_src": "ip_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "ip_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "system_top_level_clk_wiz_0_1_clk_out1",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "rst_n": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "constant"
+              }
+            }
+          },
+          "sdat_inout": {
+            "direction": "IO"
+          },
+          "sclk_out": {
+            "direction": "O"
+          },
+          "param_status_out": {
+            "direction": "O",
+            "left": "3",
+            "right": "0",
+            "parameters": {
+              "PortType": {
+                "value": "undef",
+                "value_src": "ip_prop"
+              },
+              "PortType.PROP_SRC": {
+                "value": "false",
+                "value_src": "ip_prop"
+              }
+            }
+          },
+          "finished_out": {
+            "direction": "O"
+          }
+        }
+      },
+      "synthesizer_0": {
+        "vlnv": "xilinx.com:module_ref:synthesizer:1.0",
+        "xci_name": "system_top_level_synthesizer_0_0",
+        "xci_path": "ip\\system_top_level_synthesizer_0_0\\system_top_level_synthesizer_0_0.xci",
+        "inst_hier_path": "synthesizer_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "synthesizer",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "FREQ_HZ": {
+                "value": "12288135",
+                "value_src": "ip_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "ip_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "system_top_level_clk_wiz_0_1_clk_out1",
+                "value_src": "ip_prop"
+              }
+            }
+          },
+          "rst_n": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "constant"
+              }
+            }
+          },
+          "keys_in": {
+            "direction": "I",
+            "left": "3",
+            "right": "0",
+            "parameters": {
+              "PortType": {
+                "value": "undef",
+                "value_src": "ip_prop"
+              },
+              "PortType.PROP_SRC": {
+                "value": "false",
+                "value_src": "ip_prop"
+              }
+            }
+          },
+          "aud_bclk_out": {
+            "direction": "O"
+          },
+          "aud_data_out": {
+            "direction": "O"
+          },
+          "aud_lrclk_out": {
+            "direction": "O"
+          }
+        }
+      }
+    },
+    "nets": {
+      "pin_rst_n_1": {
+        "ports": [
+          "pin_rst_n",
+          "util_vector_logic_0/Op1"
+        ]
+      },
+      "clk_wiz_0_locked": {
+        "ports": [
+          "clk_wiz_0/locked",
+          "util_vector_logic_0/Op2"
+        ]
+      },
+      "clk_wiz_0_clk_out2": {
+        "ports": [
+          "clk_wiz_0/clk_out2",
+          "pin_aud_mclk",
+          "synthesizer_0/clk"
+        ]
+      },
+      "clk_wiz_0_clk_out1": {
+        "ports": [
+          "clk_wiz_0/clk_out1",
+          "i2c_config_0/clk"
+        ]
+      },
+      "util_vector_logic_0_Res": {
+        "ports": [
+          "util_vector_logic_0/Res",
+          "i2c_config_0/rst_n",
+          "synthesizer_0/rst_n"
+        ]
+      },
+      "Net": {
+        "ports": [
+          "pin_i2c_sdata",
+          "i2c_config_0/sdat_inout"
+        ]
+      },
+      "i2c_config_0_sclk_out": {
+        "ports": [
+          "i2c_config_0/sclk_out",
+          "pin_i2c_sclk"
+        ]
+      },
+      "synthesizer_0_aud_bclk_out": {
+        "ports": [
+          "synthesizer_0/aud_bclk_out",
+          "pin_aud_bitclk"
+        ]
+      },
+      "synthesizer_0_aud_data_out": {
+        "ports": [
+          "synthesizer_0/aud_data_out",
+          "pin_aud_data"
+        ]
+      },
+      "synthesizer_0_aud_lrclk_out": {
+        "ports": [
+          "synthesizer_0/aud_lrclk_out",
+          "pin_aud_lrclk"
+        ]
+      },
+      "pin_clk125mhz_1": {
+        "ports": [
+          "pin_clk125mhz",
+          "clk_wiz_0/clk_in1"
+        ]
+      },
+      "pin_keys_1": {
+        "ports": [
+          "pin_keys",
+          "synthesizer_0/keys_in"
+        ]
+      },
+      "i2c_config_0_param_status_out": {
+        "ports": [
+          "i2c_config_0/param_status_out",
+          "pin_leds_i2c"
+        ]
+      }
+    }
+  }
+}

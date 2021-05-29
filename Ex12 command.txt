@@ -1,0 +1,5 @@
+vcom -check_synthesis -cover sbf ../vhd/i2c_config.vhd
+
+vcom -cover sbf ../tb_i2c_config.vhd
+
+vsim -coverage work.tb_i2c_config

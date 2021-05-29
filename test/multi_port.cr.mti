@@ -1,0 +1,31 @@
+D:/logsyn/tb/tb_multi_port_adder.vhd {2 {vcom -work work -2002 -explicit -vopt -stats=none D:/logsyn/tb/tb_multi_port_adder.vhd
+Model Technology ModelSim SE vcom 10.7d Compiler 2019.02 Feb 16 2019
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity tb_multi_port_adder
+-- Compiling architecture test_bench of tb_multi_port_adder
+** Warning: D:/logsyn/tb/tb_multi_port_adder.vhd(32): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+
+} {} {}} D:/logsyn/vhd/adder.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none D:/logsyn/vhd/adder.vhd
+Model Technology ModelSim SE vcom 10.7d Compiler 2019.02 Feb 16 2019
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity adder
+-- Compiling architecture rtl of adder
+
+} {} {}} D:/logsyn/vhd/multi_port_adder.vhd {0 {vcom -work work -2002 -explicit -vopt -stats=none D:/logsyn/vhd/multi_port_adder.vhd
+Model Technology ModelSim SE vcom 10.7d Compiler 2019.02 Feb 16 2019
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity multi_port_adder
+-- Compiling architecture structural of multi_port_adder
+** Error: D:/logsyn/vhd/multi_port_adder.vhd(89): near "b_in": (vcom-1576) expecting ',' or ')'.
+** Note: D:/logsyn/vhd/multi_port_adder.vhd(93): VHDL Compiler exiting
+
+} {9.0 10.0} {}}

@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Webtalk v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Mon Apr  5 22:51:52 2021
+# Process ID: 2716
+# Current directory: D:/logsyn/syn/synth_top/synth_top.sim/sim_1/behav/xsim
+# Command line: wbtcv.exe -mode batch -source D:/logsyn/syn/synth_top/synth_top.sim/sim_1/behav/xsim/xsim.dir/multi_port_adder_behav/webtalk/xsim_webtalk.tcl -notrace
+# Log file: D:/logsyn/syn/synth_top/synth_top.sim/sim_1/behav/xsim/webtalk.log
+# Journal file: D:/logsyn/syn/synth_top/synth_top.sim/sim_1/behav/xsim\webtalk.jou
+#-----------------------------------------------------------
+source D:/logsyn/syn/synth_top/synth_top.sim/sim_1/behav/xsim/xsim.dir/multi_port_adder_behav/webtalk/xsim_webtalk.tcl -notrace
