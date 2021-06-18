@@ -1,0 +1,12 @@
+* What difficulties could be expected in a generic multiple number adder if the count of numbers is not a power of two or if the count is not pre-defined?
+
+Ans : If the count of numbers is not power of 2 we will have to use another stage to add one of the subtotals with the 5th operand and this will introduce extra delay.
+If the count of operands is not predefined we will not know the number of adder components to use and also the size of the subtotal array will be undetermined.
+
+* What is the difference between VHDL's architecture levels structural and RTL? 
+Ans : Structural level means that we divide our code into smaller structures and we instantiate them into our code and we can re-use these components any time.
+RTL means Register Transfer Level and we describe the control path and data path inside the code and we perform logical and arithmetic operations directly in our code.
+
+* How is hierarchical design implemented with VHDL?
+Ans : we create the component itself (low level) and then we map these components' ports to the high level ports and signals. In this example we created the adder component
+as the low level and then we mapped it's operands with the operands_in as input and subtotal in the multi port adder as the top level.

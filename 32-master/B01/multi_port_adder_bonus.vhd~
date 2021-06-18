@@ -1,0 +1,117 @@
+-------------------------------------------------------------------------------
+-- Title      : TIE-50206 Logic Synthesis , Exercise 04
+-- Project    : Multi port adder (Structural description)
+-------------------------------------------------------------------------------
+-- File       : multi_port_adder.vhd
+-- Author     : Anh Huy Bui 293257 & Mohamed Ibrahim 292998
+-- Company    : Tampere University
+-- Created    : 2019-11-19
+-- Last update: 2019-11-27
+-- Platform   : 
+-- Standard   : VHDL'93/02
+-------------------------------------------------------------------------------
+-- Description: Adds input operands of different sizes
+-------------------------------------------------------------------------------
+-- Copyright (c) 2019 
+-------------------------------------------------------------------------------
+-- Revisions  :
+-- Date        Version  Author  Description
+-- 2019-11-14  1.0      vbmoad  Created
+-------------------------------------------------------------------------------
+
+library ieee;
+use ieee.std_logic_1164.all;
+use IEEE.math_real.all;
+use ieee.numeric_std.all;
+
+entity multi_port_adder is
+  -- Defining the generic operands width
+  generic (operand_width_g   : integer := 16;
+           exponent_of_operands_g : integer := 3);
+  -- 
+  port (
+    operands_in : in  std_logic_vector((operand_width_g*2**exponent_of_operands_g)-1 downto 0);
+    sum_out     : out std_logic_vector(operand_width_g downto 0);
+    clk         : in  std_logic;
+    rst_n       : in  std_logic);
+end multi_port_adder;
+
+
+-------------------------------------------------------------------------------
+
+architecture structural of multi_port_adder is
+  -- Declaring the adder as a component in this top level module
+  component adder
+    generic (
+      operand_width_g : integer
+      );
+    port (
+      clk     : in  std_logic;
+      rst_n   : in  std_logic;
+      a_in    : in  std_logic_vector(operand_width_g-1 downto 0);
+      b_in    : in  std_logic_vector(operand_width_g-1 downto 0);
+      sum_out : out std_logic_vector(operand_width_g downto 0));
+  end component;
+
+  -- Creating the adder_array type
+  constant num_of_operands_c : integer := 2**exponent_of_operands_g;
+  type adder_array is array (0 to num_of_operands_c-1) of std_logic_vector(operand_width_g-1 downto 0);
+  signal Input_array : adder_array;        -- Holder array for input and ouput of type adder_array
+
+  signal incrementer : integer := 0 ;  
+ 
+	type sum_adder_array is array (0 to num_of_operands_c) of std_logic_vector(operand_width_g downto 0);
+  signal Sum_array : sum_adder_array;        -- Holder array for input and ouput of type adder_array
+begin
+
+	assign_input:process (rst_n, clk)
+  
+	begin
+    -- Checking for reset signal
+    if (rst_n = '0') then
+      -- Resetting the internal signal
+      clear_input: FOR i IN 0 TO num_of_operands_c-1 LOOP
+			Input_array(i) <= (others => '0');
+		End LOOP clear_input;
+		clear_sum: FOR i IN 0 TO num_of_operands_c LOOP
+			Sum_array(i) <= (others => '0');
+		End LOOP clear_sum;
+    elsif (clk'event and clk = '1') then
+		extract_input: FOR i IN 0 TO num_of_operands_c-1 LOOP
+			Input_array(i) <= operands_in(((i+1)*operand_width_g)-1 downto i*operand_width_g);
+		End LOOP extract_input;
+	end if;
+	end process;
+  
+  -- First addition stage
+  --level_generate: FOR level IN 1 TO exponent_of_operands_g GENERATE
+  --  g_adder : FOR index IN 0 TO (2**(exponent_of_operands_g-level))-1 GENERATE
+  --   i_adder : adder
+  --  generic map (  -- mapping I/O with the second component
+  --    operand_width_g => operand_width_g)
+  --  port map (
+  --    clk     => clk,
+  --    rst_n   => rst_n,
+  --    a_in    => Input_array(2*index+incrementer),
+  --    b_in    => Input_array(2*index+1+incrementer),
+  --    sum_out => Input_array(incrementer + (2**(exponent_of_operands_g-level+1))));
+  --  END GENERATE g_adder;
+	--incrementer <= incrementer + 2**(exponent_of_operands_g-level+1);
+  --END GENERATE level_generate;
+
+
+	g_adder : FOR index IN 0 TO num_of_operands_c-1 GENERATE
+	  i_adder : adder
+    generic map (  -- mapping I/O with the second component
+      operand_width_g => operand_width_g)
+    port map (
+      clk     => clk,
+      rst_n   => rst_n,
+      a_in    => Sum_array(index)(operand_width_g-1 downto 0),
+      b_in    => Input_array(index),
+      sum_out => Sum_array(index+1));
+	END GENERATE g_adder;
+	
+  sum_out <= Sum_array(num_of_operands_c);  -- assigning the signal total to the sum_out output
+
+end structural;

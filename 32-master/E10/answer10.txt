@@ -1,0 +1,50 @@
+*  Utilization of the board:
+
+	- The amounts and the percentages of (for the whole board): 
+
+    		1. LUTs: 0.62 %
+    		2. FFs : 0.42 %
+    		3. IOs : 12.80 %
+    		4. PLLs: 25.00 %
+
+	- The division of resource usage block by block: 
+		In the form "Slice LUTs" / "Slice Registers" / "Slice" 
+    		1. i2c bus controller:		0.14% / 0.06% / 0.17%
+
+    		2. wave generators0:		0.08% / 0.02% / 0.08%	
+		   wave generators1:		0.05% / 0.02% / 0.07%
+  		   wave generators2:		0.07% / 0.02% / 0.09%
+		   wave generators3:		0.04% / 0.01% / 0.06%
+
+    		3. multiport adder:		0.03% / 0.04% / 0.12%
+
+    		4. audio ctrl:			0.20% / 0.09% / 0.47%		
+
+
+* Timing concerning both clocks "clk_out1" and "clk_out2". 
+	
+	- The requirement period (ns) and slack (ns) of both clocks' max delay paths
+
+		1. clk_out1:
+			Requirement period = 1 / 50 MHz = 20 ns
+			Slack = 15.478 ns
+
+		2. clk_out2:
+			Requirement period = 1 / 12.288135 MHz = 81.379 ns
+			Slack = 74.560 ns
+
+	- From the values you got, calculate the minimum clock period (ns) and the maximum clock frequency (MHz).
+
+		1. clk_out1:
+			Min clock period = 20 - 15.478 =  4.522 ns
+			Max clock frequency = 1 / 4.522 = 221.141088 MHz
+
+		2. clk_out2:
+			Min clock period = 81.379 - 74.560 =  6.819 ns
+			Max clock frequency = 1 / 6.819 = 146.649069 MHz	
+
+* Did you manage to do the test run succesfully with your own synthesizer? If not, what happened and what did not happen?
+		
+		Yes, we managed to use our own synthesizer component.
+
+	

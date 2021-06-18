@@ -1,0 +1,13 @@
+* Brief textual description of your processes.
+
+	We will create two processes,
+		- Process for the state transition logic and next state logic.
+		- Process for the output logic.
+	We will also save the device address, register address and value[7:0] in arrays so that we can iterate over them.
+	We will also have a smaller index iterator to go through bit by bit in each byte.
+
+* The missing configuration values from the table and where you found them.
+
+	The missing configuration value for the Digital audio interface controller "dai_ctrl" is "1000 0001" = 0h81.
+	We found it in page 62 in the audio codec datasheet "da7212_datasheet_3v4.pdf" with the help of the operating 
+	mode given in the exercise description.

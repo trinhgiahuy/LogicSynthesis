@@ -1,0 +1,55 @@
+List of found bugs:
+
+--------------------------------------------------------------------------------------------------------------
+-------- Bug 1------------
+
+	- Bug description:
+	Our i2c controller was going to the acknowledge state (setting sdat_inout = 'Z') one clock cycle late.
+
+	- How we fixed them:
+	We forced our controller to move to wait for acknowledge state immediately after sending the 8th bit
+	and to generate the 'Z' output af the middle of the low half of the sclk cycle.
+
+	- Was it hard to find:
+	No, because the simulation always showed the delay and when we revised the i2c specification we noticed the problem.
+
+	- How the bug could be avoided:
+	Maybe we can ask for help with understanding the specifications a bit clearer.
+
+--------------------------------------------------------------------------------------------------------------
+-------- Bug 2 ----------
+
+	- Bug description:
+	Our i2c controller was producing the start and stop conditions too early (the time between a start and the previous stop was too low).
+
+	- How we fixed them:
+	We put a delay between the end condition and the following start condition.
+
+	- Was it hard to find:
+	Yes, because the simulation did not show any problems because we designed the testbench ourselves.
+	The only way we recognized the bug when we submitted the code on Plussa and noticed the feedback from the assesment tool.
+
+	- How the bug could be avoided:
+	Same as last bug, understand the specification better.
+
+--------------------------------------------------------------------------------------------------------------
+-------- Bug 3 ----------
+
+	- Bug description:
+	Our i2c controller was generating the stop condition on the initial state of our state machine 
+	and we ended the transmission on the end state not the following initial state, 
+	that meant we never produced the stop condition for the last byte of data which is (system_modes_output)
+	and when we read the description of this thing we realized it was responsible for activating the output sub-system.
+
+	- How we fixed them:
+	We made our controller end the transmition on the initial state and only produce the finished out on that instant.
+
+	- Was it hard to find:
+	This was extremely hard to find because the 4 leds were lighting on, obviously because we were incrementing the byte counter
+	in the end state which meant we are transmitting 15 times which was correct but we never signaled the stop bit for the last one.
+
+	- How the bug could be avoided:
+	Revise the finite state machine implementation a couple of times before going into coding and definitely before synthesizing.
+
+
+	

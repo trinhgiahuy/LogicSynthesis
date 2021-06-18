@@ -1,0 +1,83 @@
+-------------------------------------------------------------------------------
+-- Title      : TIE-50206 Logic Synthesis , Exercise 03
+-- Project    : Generic adder (RTL description)
+-------------------------------------------------------------------------------
+-- File       : adder.vhd
+-- Author     : Anh Huy Bui 293257 & Mohamed Ibrahim 292998
+-- Company    : Tampere University
+-- Created    : 2019-11-14
+-- Last update: 2019-11-14
+-- Platform   : 
+-- Standard   : VHDL'93/02
+-------------------------------------------------------------------------------
+-- Description: Adds different sizes of input operands
+-------------------------------------------------------------------------------
+-- Copyright (c) 2020 
+-------------------------------------------------------------------------------
+-- Revisions  :
+-- Date        Version  Author  Description
+-- 2020-01-15  1.0      vbmoad  Created
+-------------------------------------------------------------------------------
+
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity  audio_codec_model is
+  -- Defining the generic operands width
+  generic (data_width_g : integer := 16
+		   );
+  
+  -- 
+  port (
+    aud_data_in     : in  std_logic;
+    aud_bclk_in    : in  std_logic;
+	aud_lrclk_in    : in  std_logic;
+    clk     		 : in  std_logic;
+    rst_n   		 : in  std_logic;
+	value_left_out     : out std_logic_vector(data_width_g-1 downto 0);
+	value_right_out     : out std_logic_vector(data_width_g-1 downto 0)
+	);
+end audio_codec_model;
+
+
+-------------------------------------------------------------------------------
+
+architecture rtl of audio_codec_model is
+  
+  type states_type is (wait_for_input, read_left, read_right) ;
+  signal present_state_r : states_type;
+  signal lr_clk_r : std_logic;
+  signal value_out_r : std_logic_vector(data_width_g -1 downto 0);
+  
+begin  -- rtl
+  
+  -- Clocked process for bclk
+  audio_codec_fsm : process(rst_n, aud_lrclk_in)
+  begin
+    -- Checking for reset signal
+    if (rst_n = '0') then
+      -- Resetting the outputs and putting initial state
+	  present_state_r <= wait_for_input;
+      value_left_out <= (others => '0');
+	  value_right_out <= (others => '0');
+    elsif aud_lrclk_in'event then 
+		  if aud_lrclk_in = '1' then
+			present_state_r <= read_left;
+			value_left_out <= value_out_r;
+		  elsif aud_lrclk_in = '0' then
+		    present_state_r <= read_right;
+			value_right_out <= value_out_r;
+		   end if;
+    end if;
+  end process audio_codec_fsm;
+  
+  bit_clocked_process : process(aud_bclk_in, present_state_r)
+  begin
+	if (aud_bclk_in'event and aud_bclk_in = '1') then
+		if present_state_r /= wait_for_input then
+			value_out_r <=  value_out_r(data_width_g-2 downto 0) & aud_data_in;
+		end if;
+	end if;
+  end process bit_clocked_process;
+end rtl;

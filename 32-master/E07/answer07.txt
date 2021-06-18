@@ -1,0 +1,25 @@
+Our block will have frequency dividers (counters) to derive the slower clock frequencies (BCLK and WCLK) from the reference clock which is 12.288 MHz.
+We will choose the bit frequency so that during one sampling period (sampling rate 0 48 KHz) we will transmit a whole word (left and right) which is 32 bits in total.
+ 
+* Bit clock frequency:
+Since our sampling rate is 48 KHz then we can use it as the WCLK and since our word contains 32 bits then the bit clock should be 32 times the word clock
+
+BCLK = 48 KHz * 32 = 1.536 MHz
+
+* Limit values of the clock divider counters and how they were derived:
+BCLK = 1.536 MHz
+ref_clk_freq = 12.288 MHz
+
+bit_frequency_divider = 12.288 / 1.536 = 8
+Then to obtain BCLK from the reference clock we need to divide the reference clock by 8 which means we need a counter to invert the bit clock signal every 8 complete cycles of the reference clock signal and hence this clock divider counter needs to count from 0 to 7.
+
+word_frequency_divider = 12.288 / 0.048 = 256
+Then to obtain WCLK from the reference clock we need to divide the reference clock by 256 which means we need a counter to invert the bit clock signal every 256 complete cycles of the reference clock signal and hence this clock divider counter needs to count from 0 to 255.
+
+* A brief plain language summary of the controller's process/processes and what they do:
+We will create 2 processes one for "bclk" and one for "lrclk" because these processes will be executed concurrently inside the architecture which ensures they are synchronized. Every process will have a counter that sets/resets the required clock according to the divider that we calculated, for example in our case the bclk process will toggle bclk once every 8 reference clock cycles.
+We will make the bclk and lrclk dividers based on the ref_clk_freq_g value as well as sample_rate_g value, i.e:
+
+word_frequency_divider = ref_clk_freq_g / sample_rate_g
+bit_frequency_divider = ref_clk_freq_g / (sample_rate_g * 32)
+
