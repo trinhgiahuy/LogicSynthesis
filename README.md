@@ -2,4 +2,4 @@
 
 
 ## Video demonstration
-![](https://github.com/trinhgiahuy/LogicSynthesis/blob/main/vid/demostrate_vid.MOV)
+[](https://www.youtube.com/watch?v=d0E-98Wm_B8)
